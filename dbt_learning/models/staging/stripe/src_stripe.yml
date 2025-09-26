@@ -1,0 +1,13 @@
+version: 2
+
+sources:    
+    - name: stripe
+      description: This is a replica of the Postgres database used by our app
+      database: raw
+      schema: stripe
+      tables:
+        - name: payment
+          description: "{{doc('payment_status')}}"
+
+        - name: amount
+          description: total amount divided by 100 to show in dollars and not cents value
