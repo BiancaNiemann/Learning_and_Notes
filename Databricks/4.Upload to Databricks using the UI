@@ -1,0 +1,15 @@
+# Upload a dataset using the UI
+- Have a csv file on local machine
+
+- upload it to databricks in Volumes as a csv file
+- Catalog
+  - Select the Scheme
+  - Select volumes
+  - Look for file you want to uplad it to
+  - Select blue box 'Upload to this Volume'
+  _ Drag and drop the csv file from local machine
+  - can now see csv file in the volume
+
+### OR 
+
+- Take same csv file and load as a table
