@@ -1,5 +1,0 @@
-# SQL on Databricks
-
-## **Understanding Data Object Ownership**
-
-
