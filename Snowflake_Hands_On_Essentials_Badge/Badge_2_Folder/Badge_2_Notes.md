@@ -1,4 +1,4 @@
-# Badge 2 
+# Badge 2 - Hands-On Essentials: Collaboration, Marketplace & Cost Estimation Workshop
 ## Lesson 3
 ### How to Test Whether You Set Up Your Table in the Right Place with the Right Name
 ``` sql
