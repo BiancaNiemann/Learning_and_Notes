@@ -42,3 +42,8 @@ if ingredients_list:
 
         st.success('Your smoothie is ordered, '+ name_on_order + '!')
 
+# New section to display smoothifroot nutrition information
+import requests
+smoothifroot_response = requests.get("https://my.smootgiefroot.com/api/fruit/watermelon")
+st.text(smoothifroot_response)
+
