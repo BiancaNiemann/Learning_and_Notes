@@ -82,24 +82,115 @@ purge = true;
 - With rapid prototyping - no date set in far futre, rather do as much as possible in the time given and then show customer what you have so far and get input for what comes next
 
 - Some more stramlit documentation to add a namebox - https://docs.streamlit.io/library/api-reference/widgets/st.text_input
-  
+
+#### Set up a sequence
+- In the database, select Create - Sequence
+- Use this to create a unique id for each row in the requested table
+- Table cannot have any rows so use TRUNCATE to clear the table
+``` sql
+create sequence order_seq
+    start = 1
+    increment = 2
+    ORDER
+    comment = 'Provide a unique id for each smoothie order';
+```
+- Now add it to the table
+``` sql
+alter table SMOOTHIES.PUBLIC.ORDERS 
+add column order_uid integer --adds the column
+default smoothies.public.order_seq.nextval  --sets the value of the column to sequence
+constraint order_uid unique enforced; --makes sure there is always a unique value in the column
+```
+
+#### Always check everything is owned by SYSADMIN
+
+- To create a maximum limit use max_selections = (amount)
+
+####  Interface
+- we use our hands, eyes and ears to interface with our phobes
+- Phones use screen and speakers or vibrate to Interface with us
+- We use a remote to interface with TV and then TV interfaces with us by changing something on screen or volume
+- IOT (Internet of Things) - devices that interface with technology - eg Alexa or Siri
+
+#### Request and responses
+- Type in something to search internet and hit enter - send a REQUEST
+- What is returned by website is called a RESPONSE
+- REQUESTS and RESPONSES are sent using internet protocol called HTTPS
+- UI refers to a page that is rendered in a web browser
+- GUIs are Graphical User Interfaces
+- GUIs amd CLIs have begun to merge (Docker, DBT and Notebooks involve CLI typed commands entered in GUIs)
+- GUIs and CLIs are both UIs
+- When you search fav website, you interface with a GUI
+- when the GUI interfaces with a database to process REQUEST and return a RESULT, the webssite is using an Application Programming Interface(AOI) to interact with the database
+
+#### What is a variable
+- Used in computing to change values while code is actually running
+- Can create a variable in Snowflake worksheet and us in other commands and long as all run in same worksheet
+- A worksheet in snowflake also a 'session'
+- $ only used for a local variable
+``` sql
+-- setting a variable
+set mystery_Bag = 'What is in here';
+
+-- Display the variable
+select $mystery_bag;
+
+-- more with variables
+set var1 = 2;
+set var2 = 5;
+set var3 = 7;
+
+select $var1+$var2+$var3;
+```
+#### What is a function
+-  function is a way to make your code more organised
+-  something you plan to do many times can go in a little module called a FUNCTION
+  - Give it a name
+  - Tell it what you are sending to it (if anything)
+  - Tell it what its job is
+  - Tell it what to send back if needed
+  - Dont need to use $ unless using a local variable and sending them to the function
+``` sql
+-- Create a function
+create function sum_mystery_bag_vars (var1 number, var2 number, var3 number)
+returns number as 'select var1+var2+var3';
+
+select sum_mystery_bag_vars(12, -36, 204);
+
+-- if using a local variable
+set this = -10.5 ;
+set that = 2;
+set the_other = 1000 ;
+
+select sum_mystery_bag_vars($this, $that, $the_other);
+```
+
+#### User-Defined function
+- Snowflake comes with hundreds of functions already defined.
+- when defining own functions can also use system functions as part of logic
+- INITCAP() to update a string, makes first letter capital and the rest lower case
+``` sql
+set alternating_caps_phrase = 'aLtErNaTiNg CaPs!';
+select INITCAP($alternating_caps_phrase);
+```
+
+#### GitHub is a way to share code with coder friends
+- Is a Social Network
+- BUT also a version managemnet system
+- Can store and share code, and people can ask for an get copies
+- Streamlit requires you to have a Github account (not SiS)
 
 
-
-
-#### Keyword
+#### Keywords
 * Streamlit
 * File formats
 * Stages
 * Some basic python code - for loops and if statements
 * Rapid prototyping
-  
-
-
-
-
-
-
+* Sequences
+* max_selections (st.multiselect) Streamlit property
+* REQUESTS and RESPONSES
+* Variables and Functions
 
 
 
