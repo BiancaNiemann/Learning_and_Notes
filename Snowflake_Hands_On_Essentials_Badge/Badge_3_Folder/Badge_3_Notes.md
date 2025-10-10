@@ -202,14 +202,6 @@ select INITCAP($alternating_caps_phrase);
 * REQUESTS and RESPONSES
 * Variables and Functions
 
+https://malaniessmoothies-3gdq8kpfffgz5lm5mh2drp.streamlit.app/
 
 
-``` sql
-
-```
-``` sql
-
-```
-``` sql
-
-```
