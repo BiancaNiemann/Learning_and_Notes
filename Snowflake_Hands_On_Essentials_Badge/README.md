@@ -37,7 +37,25 @@ A course covering Snowflake's revolutionary collaboration technologies. Learn to
 - Secure UDTFs
 - Secure Views
 - Data Listing Development
-- Snowflake Provider Studio
+- - Snowflake Provider Studio
 - Data Loading with Column Name Matching
+
+## Badge 3 - Hands-On Essentials: Data Application Builders Workshop
+
+Almost like a full-stack developer bootcamp, this course covers a wide array of technologies that will help you build applications that use Snowflake as a back end. Including: Streamlit (Python), SnowSQL, REST APIs, and much more.
+
+####Skills / Knowledge
+- Streamlit
+- Streamlit in Snowflake
+- Python
+- pandas
+- Intro to Variables
+- Intro to APIs
+- Intro to API Keys
+- Intro to CLIs
+- SnowSQL CLI
+- SnowPark
+- Intro to Functions
+
 
 
