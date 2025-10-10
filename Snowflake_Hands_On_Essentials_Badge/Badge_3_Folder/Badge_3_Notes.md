@@ -180,6 +180,16 @@ select INITCAP($alternating_caps_phrase);
 - Can store and share code, and people can ask for an get copies
 - Streamlit requires you to have a Github account (not SiS)
 
+#### 📓 Changes Needed When Moving from SiS to SniS
+- The biggest differences between SiS and SniS (Streamlit not in Snowflake or "The OG") are: 
+1) How users connect to your app.  
+2) How you connect your app to Snowflake. 
+- With SniS, users will be able to connect to your app more easily.
+- You can set up your SniS app in a way that doesn't require them to log in or have a USER in your Snowflake account.
+- In fact, Streamlit will host your app for free if you make it open to the public. 
+
+
+
 
 #### Keywords
 * Streamlit
