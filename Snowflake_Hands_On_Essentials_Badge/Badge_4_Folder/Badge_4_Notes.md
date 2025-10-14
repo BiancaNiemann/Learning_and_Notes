@@ -8,6 +8,9 @@
 - Structured, Semi Structured and Unstructured data
 - Loaded and non-loaded data
 - When some data is loaded and some is left in non-loaded state, the 2 types can be joined and queried together, also called a DATA LAKEHOUSE
+- Variables and Constants
+- UDFs - User Defined Functions
+- Materialised views, External Tables and Iceberg tables
 
 #### Using unstructured Data
 - Load images into stage
@@ -52,6 +55,54 @@ We already know that in the wider world of Data Warehousing, we can use the word
 - <img width="897" height="200" alt="image" src="https://github.com/user-attachments/assets/5517d30c-f174-4c5d-9f7b-5bc0f8f2809c" />
 
 - <img width="1028" height="560" alt="image" src="https://github.com/user-attachments/assets/58c050e2-9524-4c1c-a6ec-869a8c2cf7d3" />
+
+- Materialized Views, and
+- External Tables, and 
+- Iceberg Tables! 
+- Oh My! What are all these things? In short, all of these objects are attempts to make your less-normalized (possibly non-loaded) data look and perform like more-normalized (possibly loaded) data.
+- To provide high performance access to data that has not been loaded.
+
+### 📓  Materialized Views
+- A Materialized View is like a view that is frozen in place (more or less looks and acts like a table).
+- The big difference is that if some part of the underlying data changes,  Snowflake recognizes the need to refresh it, automatically.
+- People often choose to create a materialized view if they have a view with intensive logic that they query often but that does NOT change often.
+- We can't use a Materialized view on any of our trails data because you can't put a materialized view directly on top of staged data.
+
+### 📓  External Tables
+- An External Table is a table put over the top of non-loaded data (sounds like our recent views, right?).
+- An External Table points at a stage folder(yep, we know how to do that!) and includes a reference to a file format (or formatting attributes) much like what we've been doing with our views for most of this workshop!
+- Seems very straightforward and something within reach-- given what we've already learned in this workshop!
+- But, if we look at docs.snowflake.com the syntax for External tables looks intimidating.
+- Let's break it down into what we can easily understand and have experience with, and the parts that are little less straightforward.
+- <img width="842" height="369" alt="image" src="https://github.com/user-attachments/assets/771aff87-9434-4746-a00b-29d4a5ac972f" />
+- There are other parts that are somewhat new, but that don't seem complicated.
+- In our views we define the PATH and CAST first and then assign a name by saying AS <column name>.
+- For the external table we just flip the order. State the column name first, then AS, then the PATH and CAST column definition.
+- Also, there's a property called AUTO_REFRESH -- which seems self-explanatory!
+- <img width="854" height="355" alt="image" src="https://github.com/user-attachments/assets/71442a49-a9f3-4de5-a469-e399b4bfebca" />
+- But External Tables seem like they have some weird, intense, unfamiliar things, too.
+- Partitioning schemes and streaming message notification integrations are going to make more sense for Data Engineers (and the Data Engineering Hands-On Workshop!)
+- <img width="912" height="497" alt="image" src="https://github.com/user-attachments/assets/7154af9c-4482-4fd6-9c55-08a96f6e50db" />
+
+
+### 📓  Apache Iceberg Tables
+- Iceberg is an open-source table type.
+- The Apache Iceberg technology is owned by Apache and provided using an open-source license.
+- Iceberg Tables are a layer of functionality you can lay on top of parquet files (just like the Cherry Creek Trails file we've been using) that will make files behave more like loaded data.
+- In this way, it's like a file format, but also MUCH more.
+- Iceberg Table data that can be editable via Snowflake! Read that again. Not just the tables are editable (like the table name), but the data they make available (like the data values in columns and rows).
+- So, you will be able to create an Iceberg Table in Snowflake, on top of a set of parquet files that have NOT BEEN LOADED into Snowflake, and then run INSERT and UPDATE statements on the data using SQL 🤯.
+- Apache Iceberg Tables make Snowflake's Data Lake options incredibly powerful!!
+
+#### THIS CHANGES EVERYTHING
+
+- People sometimes think of Snowflake as a solution for structured, normalized data (which they often call a Data Warehouse).
+- For a while, people said Data Lakes were the only path forward. Lately, many people say the best solution is a Data Lakehouse (they're just mushing the two terms together and saying you need both).
+- Snowflake can be all of those things and Iceberg tables is an amazing addition.
+- Docs - https://docs.snowflake.com/en/user-guide/tutorials/create-your-first-iceberg-table
+- 
+
+
 
 
 
