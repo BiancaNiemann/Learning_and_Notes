@@ -44,7 +44,7 @@ A course covering Snowflake's revolutionary collaboration technologies. Learn to
 
 Almost like a full-stack developer bootcamp, this course covers a wide array of technologies that will help you build applications that use Snowflake as a back end. Including: Streamlit (Python), SnowSQL, REST APIs, and much more.
 
-####Skills / Knowledge
+#### Skills / Knowledge
 - Streamlit
 - Streamlit in Snowflake
 - Python
@@ -56,6 +56,21 @@ Almost like a full-stack developer bootcamp, this course covers a wide array of 
 - SnowSQL CLI
 - SnowPark
 - Intro to Functions
+
+## Badge 4 - Hands-On Essentials: Data Lake Workshop
+non-loaded data, unstructured data, GeoSpatial data, and hear about the Iceberg tables that are coming soon! Get hands on experience with Parquet and GeoJSON data, and image data. Run GeoSpatial Functions and create your own User Defined Function. This workshop is highly interactive with reflection questions, hands on lab work and automated lab work checks! Fast-paced and informative, light in tone, scenario-driven and metaphor rich.
+
+#### Skills / Knowledge
+- Snowflake Stages
+- Querying Staged Data
+- File Formats
+- Directory Tables
+- Parquet
+- GeoSpatial Functions
+- geoJSON
+- Snowflake User Defined Functions
+- Marketplace Data Shares
+- External Tables
 
 
 
