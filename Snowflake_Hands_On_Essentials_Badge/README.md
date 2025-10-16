@@ -72,5 +72,22 @@ non-loaded data, unstructured data, GeoSpatial data, and hear about the Iceberg 
 - Marketplace Data Shares
 - External Tables
 
+## Badge 5 - Hands-On Essentials: Data Engineering Workshop
+Our Data Engineering Workshop (DNGW) teaches workshop participants about the role of Data Engineers in Data-Driven organizations and allows the learner to get hands on experience with date and time data types, tasks, pipes, merge statements, and more. This workshop is highly interactive with reflection questions, hands on lab work and automated lab work checks! Fast-paced and informative, light in tone, scenario-driven and metaphor rich.
 
+#### Skills / Knowledge
+- Timezones and Timestamp Formats
+- CTAS
+- Snowflake Streams/CDC
+- Snowflake Tasks
+- Parsing JSON with Paths and Casts
+- Session Settings
+- Query Profiles
+- SQL Merge Statements
+- Task History and Dependency
+- Snowpipe Continuous Loading
+- SQL Window Function
+- Snowflake Dashboards
+- Storing Metadata in Columns
+- Advanced SQL
 
