@@ -698,9 +698,7 @@ SELECT COUNT(DISTINCT menu_item_id) AS total_menu_items,
 FROM tasty_bytes.analytics.menu_v;
 ```
 
-```sql
 
-```
 ### Snowflakes 4 architectural layers
 - Storage (access data all in one place wether structured, unstructured or semi structured)
 - Compute (near infinitly scalable)
